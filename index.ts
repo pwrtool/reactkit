@@ -3,8 +3,9 @@ import powertool from "@pwrtool/kit";
 powertool([
   {
     name: "default",
-    function: async (IO) => {
-      IO.out("Hello world!");
+    function: async (IO, _, Config) => {
+      const foo = Config.get("foo");
+      IO.out(foo);
     },
   },
 ]);
